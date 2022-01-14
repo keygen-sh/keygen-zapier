@@ -1,0 +1,73 @@
+{
+  "data": {
+    "id": "0b4b1a9a-e25a-4f14-a95e-d9dd378d6065",
+    "type": "policies",
+    "links": {
+      "self": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/policies/0b4b1a9a-e25a-4f14-a95e-d9dd378d6065"
+    },
+    "attributes": {
+      "name": "Example Policy",
+      "duration": 1209600,
+      "strict": false,
+      "floating": true,
+      "concurrent": true,
+      "scheme": null,
+      "requireProductScope": false,
+      "requirePolicyScope": false,
+      "requireMachineScope": false,
+      "requireFingerprintScope": false,
+      "requireCheckIn": false,
+      "checkInInterval": null,
+      "checkInIntervalCount": null,
+      "usePool": false,
+      "maxMachines": 3,
+      "maxCores": null,
+      "maxUses": null,
+      "encrypted": false,
+      "protected": false,
+      "heartbeatDuration": null,
+      "fingerprintUniquenessStrategy": "UNIQUE_PER_LICENSE",
+      "fingerprintMatchingStrategy": "MATCH_ANY",
+      "expirationStrategy": "RESTRICT_ACCESS",
+      "expirationBasis": "FROM_CREATION",
+      "metadata": {},
+      "created": "2017-01-02T20:26:53.464Z",
+      "updated": "2017-01-02T20:26:53.464Z"
+    },
+    "relationships": {
+      "account": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2"
+        },
+        "data": {
+          "type": "accounts",
+          "id": "59e8b93a-3b09-4d07-94be-3ee2de040de2"
+        }
+      },
+      "product": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/policies/0b4b1a9a-e25a-4f14-a95e-d9dd378d6065/product"
+        },
+        "data": {
+          "type": "products",
+          "id": "3ab38aae-bbf7-4846-9c32-af9d94bf5ad4"
+        }
+      },
+      "pool": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/policies/0b4b1a9a-e25a-4f14-a95e-d9dd378d6065/pool"
+        }
+      },
+      "licenses": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/policies/0b4b1a9a-e25a-4f14-a95e-d9dd378d6065/licenses"
+        }
+      },
+      "entitlements": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/policies/0b4b1a9a-e25a-4f14-a95e-d9dd378d6065/entitlements"
+        }
+      }
+    }
+  }
+}

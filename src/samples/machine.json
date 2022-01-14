@@ -1,0 +1,63 @@
+{
+  "data": {
+    "id": "9c4c90c8-d4d3-4571-9363-4c7b0332a6a4",
+    "type": "machines",
+    "links": {
+      "self": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/machines/9c4c90c8-d4d3-4571-9363-4c7b0332a6a4"
+    },
+    "attributes": {
+      "fingerprint": "4d:Eq:UV:D3:XZ:tL:WN:Bz:mA:Eg:E6:Mk:YX:dK:NC",
+      "cores": null,
+      "ip": null,
+      "hostname": null,
+      "platform": "macOS",
+      "name": "Office MacBook Pro",
+      "requireHeartbeat": false,
+      "heartbeatStatus": "NOT_STARTED",
+      "heartbeatDuration": 600,
+      "lastHeartbeat": null,
+      "nextHeartbeat": null,
+      "metadata": {},
+      "created": "2017-01-02T20:26:53.464Z",
+      "updated": "2017-01-02T20:26:53.464Z"
+    },
+    "relationships": {
+      "account": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2"
+        },
+        "data": {
+          "type": "accounts",
+          "id": "59e8b93a-3b09-4d07-94be-3ee2de040de2"
+        }
+      },
+      "product": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/machines/9c4c90c8-d4d3-4571-9363-4c7b0332a6a4/product"
+        },
+        "data": {
+          "type": "products",
+          "id": "22b78db6-6a2e-4a7f-9369-157976148c4c"
+        }
+      },
+      "license": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/machines/9c4c90c8-d4d3-4571-9363-4c7b0332a6a4/license"
+        },
+        "data": {
+          "type": "licenses",
+          "id": "4097d726-6cc5-4156-8575-3a96387e19b4"
+        }
+      },
+      "user": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/machines/9c4c90c8-d4d3-4571-9363-4c7b0332a6a4/user"
+        },
+        "data": {
+          "type": "users",
+          "id": "15ad7012-b570-48b7-88c1-fbab68be9d05"
+        }
+      }
+    }
+  }
+}
