@@ -19,11 +19,15 @@ import releaseCreated from './triggers/releaseCreated'
 import licenseList from './triggers/licenseList'
 import policyList from './triggers/policyList'
 import releaseList from './triggers/releaseList'
+import { stashRelease } from './creates/downloadRelease'
 
 export default {
   version: require('../package.json').version,
   platformVersion,
   authentication,
+  hydrators: {
+    stashRelease: stashRelease,
+  },
   triggers: {
     [licenseCreated.key]: licenseCreated,
     [licenseDeleted.key]: licenseDeleted,

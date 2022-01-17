@@ -5,7 +5,7 @@ interface InputData {
   id: string
 }
 
-function stashRelease(z: ZObject, bundle: Bundle<{ url: string }>): string {
+export function stashRelease(z: ZObject, bundle: Bundle<{ url: string }>): string {
   const req = z.request({ url: bundle.inputData.url, raw: true })
 
   return z.stashFile(req)
