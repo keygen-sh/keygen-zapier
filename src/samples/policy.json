@@ -7,7 +7,7 @@
     },
     "attributes": {
       "name": "Example Policy",
-      "duration": 1209600,
+      "duration": 31556952,
       "strict": false,
       "floating": true,
       "concurrent": true,

@@ -1,5 +1,5 @@
 import { Bundle, ZObject } from 'zapier-platform-core'
-import * as sample from '../samples/license.json'
+import * as sample from '../samples/release.json'
 
 interface InputData {
   id: string
@@ -7,8 +7,8 @@ interface InputData {
 
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
   const res = await z.request({
-    method: 'POST',
-    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/licenses/${encodeURIComponent(bundle.inputData.id)}/actions/suspend`,
+    method: 'GET',
+    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases/${encodeURIComponent(bundle.inputData.id)}`,
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
       accept: 'application/json',
@@ -21,19 +21,19 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
 }
 
 export default {
-  key: 'suspendLicense',
-  noun: 'License',
+  key: 'release',
+  noun: 'Release',
   display: {
-    label: 'Suspend License',
-    description: 'Suspends a license.',
+    label: 'Find Release',
+    description: 'Finds an existing release by its filename or Keygen ID.',
   },
   operation: {
     inputFields: [
       {
         required: true,
         key: 'id',
-        label: 'License',
-        dynamic: 'licenses.id.name',
+        label: 'Release',
+        dynamic: 'releases.id.name',
       },
     ],
     perform,

@@ -11,7 +11,6 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/licenses/${encodeURIComponent(bundle.inputData.id)}/actions/renew`,
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
-      'content-type': 'application/json',
       accept: 'application/json',
     },
   })

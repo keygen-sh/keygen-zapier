@@ -8,7 +8,7 @@
     "attributes": {
       "fingerprint": "4d:Eq:UV:D3:XZ:tL:WN:Bz:mA:Eg:E6:Mk:YX:dK:NC",
       "cores": null,
-      "ip": null,
+      "ip": "192.168.1.1",
       "hostname": null,
       "platform": "macOS",
       "name": "Office MacBook Pro",

@@ -1,0 +1,65 @@
+{
+  "data": {
+    "id": "30c64dcd-a74d-4f0d-8479-8745172a4817",
+    "type": "releases",
+    "attributes": {
+      "name": "Example Release 2.0",
+      "description": "This is an example description for the release.",
+      "signature": "qqcVWX402un4PEoa+E1VMBfPaBJ1RSxwiGVwrFpGfbI7dulfIqUlovvm1X96m3G2Sjl8gXUDEr8gLEAbJuQQCQ",
+      "checksum": "lQ8T/qtGvsbqsDaXBqBMh6h2AGL8mTGI4XgLvLDYZA3EumRH8gIMjJ2l5lsO5L0LIvYVqWNXPVzTEp03H4yfZA",
+      "filename": "Product-2.0.0.dmg",
+      "filetype": "dmg",
+      "filesize": 209715200,
+      "platform": "darwin",
+      "channel": "stable",
+      "status": "PUBLISHED",
+      "downloads": 1337,
+      "upgrades": 42,
+      "version": "2.0.0",
+      "semver": {
+        "major": 2,
+        "minor": 0,
+        "patch": 0,
+        "prerelease": null,
+        "build": null
+      },
+      "metadata": {},
+      "created": "2021-05-14T19:54:16.289Z",
+      "updated": "2021-05-19T13:30:56.698Z",
+      "yanked": null
+    },
+    "relationships": {
+      "account": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2"
+        },
+        "data": {
+          "type": "accounts",
+          "id": "59e8b93a-3b09-4d07-94be-3ee2de040de2"
+        }
+      },
+      "product": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/30c64dcd-a74d-4f0d-8479-8745172a4817/product"
+        },
+        "data": {
+          "type": "products",
+          "id": "652da162-cd35-4814-bd28-910a0df0dfad"
+        }
+      },
+      "constraints": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/30c64dcd-a74d-4f0d-8479-8745172a4817/constraints"
+        }
+      },
+      "artifact": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/30c64dcd-a74d-4f0d-8479-8745172a4817/artifact"
+        }
+      }
+    },
+    "links": {
+      "self": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/30c64dcd-a74d-4f0d-8479-8745172a4817"
+    }
+  }
+}
