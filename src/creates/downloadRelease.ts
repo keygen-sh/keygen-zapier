@@ -14,7 +14,7 @@ export function stashRelease(z: ZObject, bundle: Bundle<{ url: string }>): strin
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
   const res = await z.request({
     method: 'GET',
-    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases/${bundle.inputData.id}/artifact?ttl=3600`,
+    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases/${encodeURIComponent(bundle.inputData.id)}/artifact?ttl=3600`,
     redirect: 'manual',
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
