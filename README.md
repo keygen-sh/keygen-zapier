@@ -10,7 +10,7 @@ what you build!
 
 - Send an email to new customers with their license key and a download link to your app
 - Generate a new Keygen license when a new Stripe payment succeeds
-- Upload a new Keygen release when a new GitHub release is uploaded
+- Upload a new Keygen release when a new GitHub release is created
 - Suspend a Keygen license when a Stripe subscription is canceled
 - Renew a Keygen license when a Stripe subscription is renewed
 - Send an email notification when a new release is published
