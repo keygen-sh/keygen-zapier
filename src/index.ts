@@ -4,6 +4,7 @@ import createLicense from './creates/createLicense'
 import updateLicense from './creates/updateLicense'
 import renewLicense from './creates/renewLicense'
 import suspendLicense from './creates/suspendLicense'
+import reinstateLicense from './creates/reinstateLicense'
 import createToken from './creates/createToken'
 import downloadRelease from './creates/downloadRelease'
 import findLicense from './searches/findLicense'
@@ -26,7 +27,7 @@ export default {
   platformVersion,
   authentication,
   hydrators: {
-    stashRelease: stashRelease,
+    stashRelease,
   },
   triggers: {
     [licenseCreated.key]: licenseCreated,
@@ -50,6 +51,7 @@ export default {
     [updateLicense.key]: updateLicense,
     [renewLicense.key]: renewLicense,
     [suspendLicense.key]: suspendLicense,
+    [reinstateLicense.key]: reinstateLicense,
     [createToken.key]: createToken,
     [downloadRelease.key]: downloadRelease,
   },
