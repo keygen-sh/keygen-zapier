@@ -9,6 +9,7 @@ import createToken from './creates/createToken'
 import downloadRelease from './creates/downloadRelease'
 import findLicense from './searches/findLicense'
 import findRelease from './searches/findRelease'
+import findUser from './searches/findUser'
 import licenseCreated from './triggers/licenseCreated'
 import licenseDeleted from './triggers/licenseDeleted'
 import licenseExpired from './triggers/licenseExpired'
@@ -20,6 +21,7 @@ import releaseCreated from './triggers/releaseCreated'
 import licenseList from './triggers/licenseList'
 import policyList from './triggers/policyList'
 import releaseList from './triggers/releaseList'
+import userList from './triggers/userList'
 import { stashRelease } from './creates/downloadRelease'
 
 export default {
@@ -41,10 +43,12 @@ export default {
     [licenseList.key]: licenseList,
     [policyList.key]: policyList,
     [releaseList.key]: releaseList,
+    [userList.key]: userList,
   },
   searches: {
     [findLicense.key]: findLicense,
     [findRelease.key]: findRelease,
+    [findUser.key]: findUser,
   },
   creates: {
     [createLicense.key]: createLicense,

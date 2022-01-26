@@ -1,0 +1,47 @@
+{
+  "data": {
+    "id": "a5a154d2-f026-40fa-bc8d-a7e3ca415298",
+    "type": "users",
+    "attributes": {
+      "fullName": "John Doe",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "jdoe@example.com",
+      "role": "user",
+      "metadata": {},
+      "created": "2017-01-02T20:26:53.464Z",
+      "updated": "2017-01-02T20:26:53.464Z"
+    },
+    "relationships": {
+      "account": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2"
+        },
+        "data": {
+          "type": "accounts",
+          "id": "59e8b93a-3b09-4d07-94be-3ee2de040de2"
+        }
+      },
+      "products": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/users/a5a154d2-f026-40fa-bc8d-a7e3ca415298/products"
+        }
+      },
+      "licenses": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/users/a5a154d2-f026-40fa-bc8d-a7e3ca415298/licenses"
+        }
+      },
+      "machines": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/users/a5a154d2-f026-40fa-bc8d-a7e3ca415298/machines"
+        }
+      },
+      "tokens": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/users/a5a154d2-f026-40fa-bc8d-a7e3ca415298/tokens"
+        }
+      }
+    }
+  }
+}
