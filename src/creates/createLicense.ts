@@ -4,6 +4,7 @@ import * as sample from '../samples/license.json'
 interface InputData {
   policyId: string
   name: string
+  key: string
   expiry: Date
   metadata: object
 }
@@ -22,6 +23,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
         type: 'licenses',
         attributes: {
           name: bundle.inputData.name,
+          key: bundle.inputData.key ?? undefined,
           expiry: bundle.inputData.expiry ? bundle.inputData.expiry.toISOString() : undefined,
           metadata: bundle.inputData.metadata,
         },
@@ -65,9 +67,16 @@ export default {
       },
       {
         required: false,
+        key: 'key',
+        label: 'License Key',
+        helpText: `An optional custom key for the license. When blank, this will be automatically generated according to the Policy.`,
+        type: 'string',
+      },
+      {
+        required: false,
         key: 'expiry',
         label: 'Expiration Date',
-        helpText: `An optional expiry for the license. When blank, this will be set according to the Policy.`,
+        helpText: `An optional expiry for the license. When blank, this will be automatically set according to the Policy.`,
         type: 'datetime',
       },
       {
