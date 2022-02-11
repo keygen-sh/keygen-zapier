@@ -2,6 +2,7 @@ import { version as platformVersion } from 'zapier-platform-core'
 import authentication from './authentication'
 import createLicense from './creates/createLicense'
 import updateLicense from './creates/updateLicense'
+import transferLicense from './creates/transferLicense'
 import renewLicense from './creates/renewLicense'
 import suspendLicense from './creates/suspendLicense'
 import reinstateLicense from './creates/reinstateLicense'
@@ -53,6 +54,7 @@ export default {
   creates: {
     [createLicense.key]: createLicense,
     [updateLicense.key]: updateLicense,
+    [transferLicense.key]: transferLicense,
     [renewLicense.key]: renewLicense,
     [suspendLicense.key]: suspendLicense,
     [reinstateLicense.key]: reinstateLicense,
