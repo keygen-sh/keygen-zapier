@@ -21,6 +21,7 @@
       "maxMachines": 3,
       "maxCores": 64,
       "maxUses": null,
+      "requireHeartbeat": false,
       "requireCheckIn": false,
       "lastValidated": "2021-03-15T19:27:50.440Z",
       "lastCheckIn": null,
