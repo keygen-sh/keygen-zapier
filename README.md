@@ -1,7 +1,7 @@
 # keygen-zapier
 
 The official Zapier integration for [keygen.sh](https://keygen.sh). This integration is
-currently in beta. You can join the beta program [by clicking here](https://zapier.com/developer/public-invite/153849/d64f8d33515a747e154f3ee74ad90440/).
+currently in public beta. You can start using the integration today [by clicking here](https://zapier.com/apps/keygen/integrations).
 Please open a new issue for any problems or feature requests. You can also reach out to
 our [support@keygen.sh](mailto:support@keygen.sh) email anytime. We're excited to see
 what you build!
