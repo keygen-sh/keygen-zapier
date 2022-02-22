@@ -1,0 +1,122 @@
+{
+  "data": {
+    "id": "e438b26c-79ab-4088-9bbd-17dbb70c429a",
+    "type": "webhook-events",
+    "meta": {
+      "idempotencyToken": "eeb719a7005359c2b1993c90cff455e2749142253c15227d3f7a93048868c5v2"
+    },
+    "links": {
+      "self": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/webhook-events/e438b26c-79ab-4088-9bbd-17dbb70c429a"
+    },
+    "attributes": {
+      "endpoint": "https://hooks.zapier.com/hooks/standard/123/xyz/",
+      "payload": {
+        "data": {
+          "id": "b18e3f3a-330c-4d8d-ae2e-014db21fa827",
+          "type": "licenses",
+          "links": {
+            "self": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/licenses/b18e3f3a-330c-4d8d-ae2e-014db21fa827"
+          },
+          "attributes": {
+            "name": "Example License",
+            "key": "6DFB15-6597FC-B7DBB6-E34DAB-9D77C0-V3",
+            "expiry": "2022-01-15T19:27:50.440Z",
+            "status": "EXPIRED",
+            "uses": 0,
+            "protected": false,
+            "suspended": false,
+            "scheme": null,
+            "encrypted": false,
+            "floating": false,
+            "concurrent": true,
+            "strict": false,
+            "maxMachines": 3,
+            "maxCores": 64,
+            "maxUses": null,
+            "requireHeartbeat": false,
+            "requireCheckIn": false,
+            "lastValidated": "2021-02-21T19:27:50.440Z",
+            "lastCheckIn": null,
+            "nextCheckIn": null,
+            "metadata": {},
+            "created": "2017-01-02T20:26:53.464Z",
+            "updated": "2017-01-02T20:26:53.464Z"
+          },
+          "relationships": {
+            "account": {
+              "links": {
+                "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2"
+              },
+              "data": {
+                "type": "accounts",
+                "id": "59e8b93a-3b09-4d07-94be-3ee2de040de2"
+              }
+            },
+            "product": {
+              "links": {
+                "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/licenses/b18e3f3a-330c-4d8d-ae2e-014db21fa827/product"
+              },
+              "data": {
+                "type": "products",
+                "id": "eb4e14a7-ea41-4ede-b3fe-5e835c17156b"
+              }
+            },
+            "policy": {
+              "links": {
+                "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/licenses/b18e3f3a-330c-4d8d-ae2e-014db21fa827/policy"
+              },
+              "data": {
+                "type": "policies",
+                "id": "70af414d-6152-4ff1-892b-15a40ada6b4e"
+              }
+            },
+            "user": {
+              "links": {
+                "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/licenses/b18e3f3a-330c-4d8d-ae2e-014db21fa827/user"
+              },
+              "data": {
+                "type": "users",
+                "id": "e8bf27c0-5f9c-4135-a65c-f52706c5fd4c"
+              }
+            },
+            "machines": {
+              "links": {
+                "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/licenses/b18e3f3a-330c-4d8d-ae2e-014db21fa827/machines"
+              },
+              "meta": {
+                "count": 2
+              }
+            },
+            "tokens": {
+              "links": {
+                "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/licenses/b18e3f3a-330c-4d8d-ae2e-014db21fa827/tokens"
+              }
+            },
+            "entitlements": {
+              "links": {
+                "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/licenses/b18e3f3a-330c-4d8d-ae2e-014db21fa827/entitlements"
+              }
+            }
+          }
+        }
+      },
+      "event": "license.expired",
+      "status": "queued",
+      "lastResponseCode": null,
+      "lastResponseBody": null,
+      "created": "2017-01-02T20:26:53.464Z",
+      "updated": "2017-01-02T20:26:53.464Z"
+    },
+    "relationships": {
+      "account": {
+        "links": {
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2"
+        },
+        "data": {
+          "type": "accounts",
+          "id": "59e8b93a-3b09-4d07-94be-3ee2de040de2"
+        }
+      }
+    }
+  }
+}

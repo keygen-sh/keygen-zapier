@@ -23,6 +23,7 @@ import licenseList from './triggers/licenseList'
 import policyList from './triggers/policyList'
 import releaseList from './triggers/releaseList'
 import userList from './triggers/userList'
+import newEvent from './triggers/newEvent'
 import { stashRelease } from './creates/downloadRelease'
 
 export default {
@@ -45,6 +46,7 @@ export default {
     [policyList.key]: policyList,
     [releaseList.key]: releaseList,
     [userList.key]: userList,
+    [newEvent.key]: newEvent,
   },
   searches: {
     [findLicense.key]: findLicense,
