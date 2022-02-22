@@ -3,6 +3,7 @@ import * as sample from '../samples/license.json'
 
 interface InputData {
   policyId: string
+  userId: string
   name: string
   key: string
   expiry: Date
@@ -10,6 +11,10 @@ interface InputData {
 }
 
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
+  const user = bundle.inputData.userId
+    ? { data: { type: 'users', id: bundle.inputData.userId } }
+    : null
+
   const res = await z.request({
     method: 'POST',
     url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/licenses`,
@@ -31,6 +36,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
           policy: {
             data: { type: 'policies', id: bundle.inputData.policyId }
           },
+          user,
         },
       },
     },
@@ -57,6 +63,13 @@ export default {
         label: 'Policy',
         helpText: `The policy that the license will implement. Policies define license behavior.`,
         dynamic: 'policies.id.name',
+      },
+      {
+        required: false,
+        key: 'userId',
+        label: 'User',
+        helpText: `The user that the license will belong to. This is optional.`,
+        dynamic: 'users.id.name',
       },
       {
         required: false,
