@@ -29,7 +29,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
         attributes: {
           name: bundle.inputData.name,
           key: bundle.inputData.key ?? undefined,
-          expiry: bundle.inputData.expiry ? bundle.inputData.expiry.toISOString() : undefined,
+          expiry: bundle.inputData.expiry ? bundle.inputData.expiry : undefined,
           metadata: bundle.inputData.metadata,
         },
         relationships: {
