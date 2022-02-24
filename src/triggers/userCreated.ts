@@ -1,5 +1,5 @@
 import { Bundle, ZObject } from 'zapier-platform-core'
-import * as sample from '../samples/license.json'
+import * as sample from '../samples/user.json'
 
 async function performSubscribe(z: ZObject, bundle: Bundle) {
   const res = await z.request({
