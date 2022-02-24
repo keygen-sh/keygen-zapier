@@ -8,6 +8,7 @@ import suspendLicense from './creates/suspendLicense'
 import reinstateLicense from './creates/reinstateLicense'
 import createToken from './creates/createToken'
 import downloadRelease from './creates/downloadRelease'
+import createUser from './creates/createUser'
 import findLicense from './searches/findLicense'
 import findRelease from './searches/findRelease'
 import findUser from './searches/findUser'
@@ -22,8 +23,11 @@ import releaseCreated from './triggers/releaseCreated'
 import licenseList from './triggers/licenseList'
 import policyList from './triggers/policyList'
 import releaseList from './triggers/releaseList'
+import userCreated from './triggers/userCreated'
 import userList from './triggers/userList'
+import resetPassword from './creates/resetPassword'
 import newEvent from './triggers/newEvent'
+import passwordReset from './triggers/passwordReset'
 import { stashRelease } from './creates/downloadRelease'
 
 export default {
@@ -45,8 +49,10 @@ export default {
     [licenseList.key]: licenseList,
     [policyList.key]: policyList,
     [releaseList.key]: releaseList,
+    [userCreated.key]: userCreated,
     [userList.key]: userList,
     [newEvent.key]: newEvent,
+    [passwordReset.key]: passwordReset,
   },
   searches: {
     [findLicense.key]: findLicense,
@@ -62,5 +68,7 @@ export default {
     [reinstateLicense.key]: reinstateLicense,
     [createToken.key]: createToken,
     [downloadRelease.key]: downloadRelease,
+    [createUser.key]: createUser,
+    [resetPassword.key]: resetPassword,
   },
 }

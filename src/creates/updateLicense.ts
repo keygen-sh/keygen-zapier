@@ -21,7 +21,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
       data: {
         type: 'licenses',
         attributes: {
-          name: bundle.inputData.name,
+          name: bundle.inputData.name ?? undefined,
           expiry: bundle.inputData.expiry ? bundle.inputData.expiry : undefined,
           metadata: bundle.inputData.metadata,
         },
