@@ -67,8 +67,8 @@ async function perform(z: ZObject, bundle: Bundle) {
 }
 
 export default {
-  key: 'licenseCreated',
-  noun: 'License',
+  key: 'userCreated',
+  noun: 'User',
   display: {
     label: 'User Created',
     description: 'Triggers when a new user is created.',
