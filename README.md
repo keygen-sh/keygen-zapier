@@ -2,7 +2,6 @@
 
 The official Zapier integration for [keygen.sh](https://keygen.sh). You can start using
 the integration today [by clicking here](https://zapier.com/apps/keygen/integrations).
-
 Please open a new issue for any problems or feature requests. You can also reach out to
 our [support@keygen.sh](mailto:support@keygen.sh) email anytime. We're excited to see
 what you build!
@@ -10,8 +9,9 @@ what you build!
 ## Examples
 
 - Send an email to new customers with their license key and a download link to your app
-- Generate a new Keygen license when a new Stripe payment succeeds
-- Upload a new Keygen release when a new GitHub release is created
+- Generate a new Keygen license for a new Chargebee subscription
+- Upload a Keygen release when a new GitHub release is created
+- Create a Keygen license when a new Stripe payment succeeds
 - Suspend a Keygen license when a Stripe subscription is canceled
 - Renew a Keygen license when a Stripe subscription is renewed
 - Send an email notification when a new release is published
