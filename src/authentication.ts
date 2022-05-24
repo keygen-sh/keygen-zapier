@@ -19,6 +19,7 @@ async function test(z: ZObject, bundle: Bundle) {
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
       accept: 'application/json',
+      'keygen-version': '1.0',
     },
   })
 
