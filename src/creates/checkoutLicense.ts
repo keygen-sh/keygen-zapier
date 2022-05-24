@@ -21,7 +21,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     body: JSON.stringify({
       meta: {
         encrypt: !!bundle.inputData.encrypted,
-        includes: [
+        include: [
           'entitlements',
           'group',
           'user',
