@@ -3,10 +3,7 @@ import * as sample from '../samples/licenseFile.json'
 
 interface InputData {
   id: string
-  encrypted: boolean
-  entitlements: boolean
-  group: boolean
-  user: boolean
+  encrypt: boolean
 }
 
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
@@ -20,7 +17,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     },
     body: JSON.stringify({
       meta: {
-        encrypt: !!bundle.inputData.encrypted,
+        encrypt: !!bundle.inputData.encrypt,
         include: [
           'entitlements',
           'group',
@@ -52,7 +49,7 @@ export default {
       },
       {
         required: false,
-        key: 'encrypted',
+        key: 'encrypt',
         label: 'Encrypted',
         helpText: `Whether or not to encrypt the license file.`,
         type: 'boolean',
