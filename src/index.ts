@@ -10,6 +10,7 @@ import checkoutLicense from './creates/checkoutLicense'
 import createToken from './creates/createToken'
 import downloadRelease from './creates/downloadRelease'
 import createUser from './creates/createUser'
+import updateUser from './creates/updateUser'
 import findLicense from './searches/findLicense'
 import findRelease from './searches/findRelease'
 import findUser from './searches/findUser'
@@ -71,6 +72,7 @@ export default {
     [createToken.key]: createToken,
     [downloadRelease.key]: downloadRelease,
     [createUser.key]: createUser,
+    [updateUser.key]: updateUser,
     [resetPassword.key]: resetPassword,
   },
 }
