@@ -11,6 +11,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
   }
 
   const res = await z.request({
+    skipThrowForStatus: true,
     method: 'GET',
     url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases/${encodeURIComponent(bundle.inputData.id)}`,
     headers: {
