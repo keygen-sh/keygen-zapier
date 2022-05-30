@@ -26,7 +26,7 @@ export default {
   noun: 'Release',
   display: {
     label: 'Find Release',
-    description: 'Finds an existing release by its filename or Keygen ID.',
+    description: 'Finds an existing release by its Keygen ID.',
   },
   operation: {
     inputFields: [
