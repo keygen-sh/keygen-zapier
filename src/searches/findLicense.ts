@@ -11,6 +11,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
   }
 
   const res = await z.request({
+    skipThrowForStatus: true,
     method: 'GET',
     url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/licenses/${encodeURIComponent(bundle.inputData.id)}`,
     headers: {
@@ -19,6 +20,13 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
       'keygen-version': '1.0',
     },
   })
+
+  // We don't want to throw an error on 404s
+  if (res.status === 404) {
+    return []
+  }
+
+  res.throwForStatus()
 
   return [res.json]
 }

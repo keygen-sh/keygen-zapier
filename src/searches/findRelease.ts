@@ -20,6 +20,13 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     },
   })
 
+  // We don't want to throw an error on 404s
+  if (res.status === 404) {
+    return []
+  }
+
+  res.throwForStatus()
+
   return [res.json]
 }
 
