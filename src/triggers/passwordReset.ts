@@ -24,8 +24,6 @@ async function performSubscribe(z: ZObject, bundle: Bundle) {
     },
   })
 
-  res.throwForStatus()
-
   return res.json.data
 }
 
@@ -40,8 +38,6 @@ async function performUnsubscribe(z: ZObject, bundle: Bundle) {
     },
   })
 
-  res.throwForStatus()
-
   return null
 }
 
@@ -55,8 +51,6 @@ async function performList(z: ZObject, bundle: Bundle) {
       'keygen-version': '1.0',
     },
   })
-
-  res.throwForStatus()
 
   return res.json.data.map((data: unknown) => ({ data, meta: sample.meta }))
 }

@@ -28,8 +28,6 @@ async function performSubscribe(z: ZObject, bundle: Bundle<InputData>) {
     },
   })
 
-  res.throwForStatus()
-
   return res.json.data
 }
 
@@ -43,8 +41,6 @@ async function performUnsubscribe(z: ZObject, bundle: Bundle) {
       'keygen-version': '1.0',
     },
   })
-
-  res.throwForStatus()
 
   return null
 }
@@ -61,8 +57,6 @@ async function performList(z: ZObject, bundle: Bundle<InputData>) {
       'keygen-version': '1.0',
     },
   })
-
-  res.throwForStatus()
 
   return res.json.data.map((data: any) => {
     data.attributes.payload = z.JSON.parse(data.attributes.payload)

@@ -31,8 +31,6 @@ async function perform(z: ZObject, bundle: Bundle) {
     },
   })
 
-  res.throwForStatus()
-
   return res.json.data.map(
     (r: Release) => ({ id: r.id, name: toLabel(r) })
   )

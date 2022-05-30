@@ -21,8 +21,6 @@ async function perform(z: ZObject, bundle: Bundle) {
     },
   })
 
-  res.throwForStatus()
-
   return res.json.data.map(
     (p: Policy) => ({ id: p.id, name: p.attributes.name })
   )

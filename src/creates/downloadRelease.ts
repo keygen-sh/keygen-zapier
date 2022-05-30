@@ -23,8 +23,6 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     },
   })
 
-  res.throwForStatus()
-
   const url = z.dehydrateFile(stashRelease, { url: res.getHeader('location')! })
 
   return { url }

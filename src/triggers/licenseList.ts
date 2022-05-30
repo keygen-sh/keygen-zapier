@@ -21,8 +21,6 @@ async function perform(z: ZObject, bundle: Bundle) {
     },
   })
 
-  res.throwForStatus()
-
   return res.json.data.map(
     (l: License) => ({ id: l.id, name: l.attributes.name })
   )

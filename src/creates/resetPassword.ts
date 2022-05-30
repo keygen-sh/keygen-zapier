@@ -23,8 +23,6 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     },
   })
 
-  res.throwForStatus()
-
   return {}
 }
 
