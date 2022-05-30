@@ -6,6 +6,10 @@ interface InputData {
 }
 
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
+  if (!bundle.inputData.id) {
+    return [];
+  }
+
   const res = await z.request({
     method: 'GET',
     url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/licenses/${encodeURIComponent(bundle.inputData.id)}`,
@@ -29,7 +33,7 @@ export default {
   operation: {
     inputFields: [
       {
-        required: true,
+        required: false,
         key: 'id',
         label: 'License',
         dynamic: 'licenses.id.name',
