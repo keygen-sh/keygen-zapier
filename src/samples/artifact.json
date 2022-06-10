@@ -1,0 +1,43 @@
+{
+  "data": {
+    "id": "0dad8516-f071-4573-bcea-d774e81c4a37",
+    "type": "artifacts",
+    "attributes": {
+      "filename": "Product-2.0.0.dmg",
+      "filetype": "dmg",
+      "filesize": 209715200,
+      "platform": "darwin",
+      "arch": "amd64",
+      "signature": "qqcVWX402un4PEoa+E1VMBfPaBJ1RSxwiGVwrFpGfbI7dulfIqUlovvm1X96m3G2Sjl8gXUDEr8gLEAbJuQQCQ",
+      "checksum": "lQ8T/qtGvsbqsDaXBqBMh6h2AGL8mTGI4XgLvLDYZA3EumRH8gIMjJ2l5lsO5L0LIvYVqWNXPVzTEp03H4yfZA",
+      "status": "UPLOADED",
+      "metadata": {},
+      "created": "2022-05-30T13:28:01.592Z",
+      "updated": "2022-05-30T13:28:31.786Z"
+    },
+    "relationships": {
+      "account": {
+        "links": {
+          "related": "/v1/accounts/{ACCOUNT}"
+        },
+        "data": {
+          "type": "accounts",
+          "id": "{ACCOUNT}"
+        }
+      },
+      "release": {
+        "links": {
+          "related": "/v1/accounts/{ACCOUNT}/releases/8157c656-c60f-4b82-b93f-3b3ed73abf80"
+        },
+        "data": {
+          "type": "releases",
+          "id": "8157c656-c60f-4b82-b93f-3b3ed73abf80"
+        }
+      }
+    },
+    "links": {
+      "related": "/v1/accounts/{ACCOUNT}/releases/8157c656-c60f-4b82-b93f-3b3ed73abf80/artifacts/0dad8516-f071-4573-bcea-d774e81c4a37",
+      "self": "/v1/accounts/{ACCOUNT}/artifacts/0dad8516-f071-4573-bcea-d774e81c4a37"
+    }
+  }
+}

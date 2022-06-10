@@ -1,27 +1,33 @@
 import { Bundle, ZObject } from 'zapier-platform-core'
-import * as sample from '../samples/release.json'
+import * as sample from '../samples/artifact.json'
 
-interface Release {
+interface Artifact {
   type: string
   id: string
   attributes: {
-    channel: string
-    version: string
-    name: string
+    filename: string
+    platform: string
+    arch: string
+  }
+  relationships: {
+    release: {
+      data: { id: string }
+    }
   }
 }
 
-function toLabel(release: Release): string {
-  const { name, version, channel } = release.attributes
+function toLabel(artifact: Artifact): string {
+  const { release: { data: { id: releaseId } } } = artifact.relationships
+  const { filename, platform, arch } = artifact.attributes
 
-  return `${name} v${version} (${channel})`.trim()
+  return `${filename} - ${platform}/${arch} (${releaseId})`
 }
 
 async function perform(z: ZObject, bundle: Bundle) {
   const page = bundle.meta.page || 1
   const res = await z.request({
     method: 'GET',
-    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases?page[number]=${page}&page[size]=100`,
+    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/artifacts?page[number]=${page}&page[size]=100`,
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
       accept: 'application/json',
@@ -30,15 +36,15 @@ async function perform(z: ZObject, bundle: Bundle) {
   })
 
   return res.json.data.map(
-    (r: Release) => ({ id: r.id, name: toLabel(r) })
+    (a: Artifact) => ({ id: a.id, name: toLabel(a) })
   )
 }
 
 export default {
-  key: 'releases',
-  noun: 'Releases',
+  key: 'artifacts',
+  noun: 'Artifacts',
   display: {
-    label: 'List of Releases',
+    label: 'List of Artifacts',
     description: 'This is a hidden trigger, and is used in a Dynamic Dropdown within this app.',
     hidden: true,
   },

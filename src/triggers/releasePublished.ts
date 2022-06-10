@@ -1,5 +1,5 @@
 import { Bundle, ZObject } from 'zapier-platform-core'
-import * as sample from '../samples/license.json'
+import * as sample from '../samples/release.json'
 
 async function performSubscribe(z: ZObject, bundle: Bundle) {
   const res = await z.request({
@@ -17,7 +17,7 @@ async function performSubscribe(z: ZObject, bundle: Bundle) {
         attributes: {
           url: bundle.targetUrl,
           subscriptions: [
-            'license.deleted',
+            'release.published',
           ],
         },
       },
@@ -44,7 +44,7 @@ async function performUnsubscribe(z: ZObject, bundle: Bundle) {
 async function performList(z: ZObject, bundle: Bundle) {
   const res = await z.request({
     method: 'GET',
-    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/licenses`,
+    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases`,
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
       accept: 'application/json',
@@ -56,7 +56,7 @@ async function performList(z: ZObject, bundle: Bundle) {
 }
 
 async function perform(z: ZObject, bundle: Bundle) {
-  if (bundle.cleanedRequest.data.attributes.event !== 'license.deleted') {
+  if (bundle.cleanedRequest.data.attributes.event !== 'release.published') {
     throw new Error('Invalid event')
   }
 
@@ -64,11 +64,12 @@ async function perform(z: ZObject, bundle: Bundle) {
 }
 
 export default {
-  key: 'licenseDeleted',
-  noun: 'License',
+  key: 'releasePublished',
+  noun: 'Release',
   display: {
-    label: 'License Deleted',
-    description: 'Triggers when a license is deleted.',
+    important: true,
+    label: 'Release Published',
+    description: 'Triggers when a release is published.',
   },
   operation: {
     type: 'hook',

@@ -1,19 +1,20 @@
 import { Bundle, ZObject } from 'zapier-platform-core'
-import * as sample from '../samples/release.json'
+import * as sample from '../samples/artifact.json'
 
 interface InputData {
+  releaseId: string
   id: string
 }
 
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
-  if (!bundle.inputData.id) {
+  if (!bundle.inputData.releaseId || !bundle.inputData.id) {
     return [];
   }
 
   const res = await z.request({
     skipThrowForStatus: true,
     method: 'GET',
-    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases/${encodeURIComponent(bundle.inputData.id)}`,
+    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases/${encodeURIComponent(bundle.inputData.releaseId)}/artifacts/${encodeURIComponent(bundle.inputData.id)}`,
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
       accept: 'application/json',
@@ -32,19 +33,25 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
 }
 
 export default {
-  key: 'release',
-  noun: 'Release',
+  key: 'artifact',
+  noun: 'Artifact',
   display: {
-    label: 'Find Release',
-    description: 'Finds an existing release by its version, tag or Keygen ID.',
+    label: 'Find Artifact',
+    description: 'Finds an existing release artifact by its filename or Keygen ID.',
   },
   operation: {
     inputFields: [
       {
         required: false,
-        key: 'id',
+        key: 'releaseId',
         label: 'Release',
         dynamic: 'releases.id.name',
+      },
+      {
+        required: false,
+        key: 'id',
+        label: 'Artifact',
+        dynamic: 'artifacts.id.name',
       },
     ],
     perform,

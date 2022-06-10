@@ -8,11 +8,12 @@ import suspendLicense from './creates/suspendLicense'
 import reinstateLicense from './creates/reinstateLicense'
 import checkoutLicense from './creates/checkoutLicense'
 import createToken from './creates/createToken'
-import downloadRelease from './creates/downloadRelease'
+import downloadArtifact from './creates/downloadArtifact'
 import createUser from './creates/createUser'
 import updateUser from './creates/updateUser'
 import findLicense from './searches/findLicense'
 import findRelease from './searches/findRelease'
+import findArtifact from './searches/findArtifact'
 import findUser from './searches/findUser'
 import licenseCreated from './triggers/licenseCreated'
 import licenseDeleted from './triggers/licenseDeleted'
@@ -22,22 +23,24 @@ import licenseRenewed from './triggers/licenseRenewed'
 import machineActivated from './triggers/machineActivated'
 import machineDeactivated from './triggers/machineDeactivated'
 import releaseCreated from './triggers/releaseCreated'
+import releasePublished from './triggers/releasePublished'
 import licenseList from './triggers/licenseList'
 import policyList from './triggers/policyList'
 import releaseList from './triggers/releaseList'
+import artifactList from './triggers/artifactList'
 import userCreated from './triggers/userCreated'
 import userList from './triggers/userList'
 import resetPassword from './creates/resetPassword'
 import newEvent from './triggers/newEvent'
 import passwordReset from './triggers/passwordReset'
-import { stashRelease } from './creates/downloadRelease'
+import { stashArtifact } from './creates/downloadArtifact'
 
 export default {
   version: require('../package.json').version,
   platformVersion,
   authentication,
   hydrators: {
-    stashRelease,
+    stashArtifact,
   },
   triggers: {
     [licenseCreated.key]: licenseCreated,
@@ -48,9 +51,11 @@ export default {
     [machineActivated.key]: machineActivated,
     [machineDeactivated.key]: machineDeactivated,
     [releaseCreated.key]: releaseCreated,
+    [releasePublished.key]: releasePublished,
     [licenseList.key]: licenseList,
     [policyList.key]: policyList,
     [releaseList.key]: releaseList,
+    [artifactList.key]: artifactList,
     [userCreated.key]: userCreated,
     [userList.key]: userList,
     [newEvent.key]: newEvent,
@@ -59,6 +64,7 @@ export default {
   searches: {
     [findLicense.key]: findLicense,
     [findRelease.key]: findRelease,
+    [findArtifact.key]: findArtifact,
     [findUser.key]: findUser,
   },
   creates: {
@@ -70,7 +76,7 @@ export default {
     [reinstateLicense.key]: reinstateLicense,
     [checkoutLicense.key]: checkoutLicense,
     [createToken.key]: createToken,
-    [downloadRelease.key]: downloadRelease,
+    [downloadArtifact.key]: downloadArtifact,
     [createUser.key]: createUser,
     [updateUser.key]: updateUser,
     [resetPassword.key]: resetPassword,

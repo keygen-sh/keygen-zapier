@@ -17,7 +17,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
       accept: 'application/json',
-      'keygen-version': '1.0',
+      'keygen-version': '1.1',
     },
   })
 
@@ -37,6 +37,7 @@ export default {
   display: {
     label: 'Find License',
     description: 'Finds an existing license by its license key or Keygen ID.',
+    important: true,
   },
   operation: {
     inputFields: [

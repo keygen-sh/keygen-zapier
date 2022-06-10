@@ -1,11 +1,11 @@
 import { Bundle, ZObject } from 'zapier-platform-core'
-import * as sample from '../samples/release.json'
 
 interface InputData {
+  releaseId: string
   id: string
 }
 
-export function stashRelease(z: ZObject, bundle: Bundle<{ url: string }>): string {
+export function stashArtifact(z: ZObject, bundle: Bundle<{ url: string }>): string {
   const req = z.request({ url: bundle.inputData.url, raw: true })
 
   return z.stashFile(req)
@@ -14,37 +14,43 @@ export function stashRelease(z: ZObject, bundle: Bundle<{ url: string }>): strin
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
   const res = await z.request({
     method: 'GET',
-    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases/${encodeURIComponent(bundle.inputData.id)}/artifact?ttl=3600`,
+    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases/${encodeURIComponent(bundle.inputData.releaseId)}/artifacts/${encodeURIComponent(bundle.inputData.id)}?ttl=3600`,
     redirect: 'manual',
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
       accept: 'application/json',
-      'keygen-version': '1.0',
+      'keygen-version': '1.1',
     },
   })
 
-  const url = z.dehydrateFile(stashRelease, { url: res.getHeader('location')! })
+  const url = z.dehydrateFile(stashArtifact, { url: res.getHeader('location')! })
 
   return { url }
 }
 
 export default {
-  key: 'downloadRelease',
-  noun: 'Release',
+  key: 'downloadArtifact',
+  noun: 'Download',
   display: {
-    important: true,
-    label: 'Download Release',
-    description: 'Creates a download link for a release.',
+    label: 'Download Artifact',
+    description: 'Creates a download link for a release artifact.',
     directions: 'Use this to e.g. deliver download links to your customers after purchase.'
   },
   operation: {
     inputFields: [
       {
         required: true,
-        key: 'id',
+        key: 'releaseId',
         label: 'Release',
         helpText: `The release that the download link is for.`,
         dynamic: 'releases.id.name',
+      },
+      {
+        required: true,
+        key: 'id',
+        label: 'Artifact',
+        helpText: `The artifact that the download link is for.`,
+        dynamic: 'artifacts.id.name',
       },
     ],
     perform,
