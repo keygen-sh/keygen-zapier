@@ -33,15 +33,11 @@ import userList from './triggers/userList'
 import resetPassword from './creates/resetPassword'
 import newEvent from './triggers/newEvent'
 import passwordReset from './triggers/passwordReset'
-import { stashArtifact } from './creates/downloadArtifact'
 
 export default {
   version: require('../package.json').version,
   platformVersion,
   authentication,
-  hydrators: {
-    stashArtifact,
-  },
   triggers: {
     [licenseCreated.key]: licenseCreated,
     [licenseDeleted.key]: licenseDeleted,

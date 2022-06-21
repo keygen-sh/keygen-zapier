@@ -5,16 +5,11 @@ interface InputData {
   id: string
 }
 
-export function stashArtifact(z: ZObject, bundle: Bundle<{ url: string }>): string {
-  const req = z.request({ url: bundle.inputData.url, raw: true })
-
-  return z.stashFile(req)
-}
-
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
+  const ttl = 604800 // 1 week
   const res = await z.request({
     method: 'GET',
-    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases/${encodeURIComponent(bundle.inputData.releaseId)}/artifacts/${encodeURIComponent(bundle.inputData.id)}?ttl=3600`,
+    url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/releases/${encodeURIComponent(bundle.inputData.releaseId)}/artifacts/${encodeURIComponent(bundle.inputData.id)}?ttl=${ttl}`,
     redirect: 'manual',
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
@@ -23,9 +18,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     },
   })
 
-  const url = z.dehydrateFile(stashArtifact, { url: res.getHeader('location')! })
-
-  return { url }
+  return { url: res.getHeader('location')! }
 }
 
 export default {
@@ -34,7 +27,7 @@ export default {
   display: {
     label: 'Download Artifact',
     description: 'Creates a download link for a release artifact.',
-    directions: 'Use this to e.g. deliver download links to your customers after purchase.'
+    directions: 'Use this to e.g. deliver download links to your customers after purchase. Download links will automatically expire after 1 week.'
   },
   operation: {
     inputFields: [
