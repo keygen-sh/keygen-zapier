@@ -18,7 +18,12 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     },
   })
 
-  return { url: res.getHeader('location')! }
+  const url = res.getHeader('location')
+  if (url == null) {
+    throw new z.errors.HaltedError('Artifact is not available for download yet. Please ensure the artifact has finished uploading and that the release has been published.')
+  }
+
+  return { url }
 }
 
 export default {
