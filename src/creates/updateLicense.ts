@@ -59,7 +59,7 @@ export default {
         required: false,
         key: 'expiry',
         label: 'Expiration Date',
-        helpText: `An optional expiry for the license. When blank, this will be set according to the Policy.`,
+        helpText: `An optional expiry for the license. When blank, this will be unchanged.`,
         type: 'datetime',
       },
       {
