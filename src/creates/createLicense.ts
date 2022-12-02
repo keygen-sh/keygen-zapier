@@ -1,4 +1,5 @@
 import { Bundle, ZObject } from 'zapier-platform-core'
+import parseMetadata from '../helpers/parseMetadata'
 import * as sample from '../samples/license.json'
 
 interface InputData {
@@ -11,6 +12,7 @@ interface InputData {
 }
 
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
+  const metadata = parseMetadata(bundle.inputData.metadata)
   const user = bundle.inputData.userId
     ? { data: { type: 'users', id: bundle.inputData.userId } }
     : null
@@ -31,7 +33,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
           name: bundle.inputData.name ?? undefined,
           key: bundle.inputData.key ?? undefined,
           expiry: bundle.inputData.expiry ? bundle.inputData.expiry : undefined,
-          metadata: bundle.inputData.metadata,
+          metadata,
         },
         relationships: {
           policy: {
@@ -95,7 +97,7 @@ export default {
         required: false,
         key: 'metadata',
         label: 'Metadata',
-        helpText: `Metadata is useful for storing additional, structured information on a license. As an example, you could store a customer's email address or a Stripe customer ID.`,
+        helpText: `Metadata is useful for storing additional, structured information on a license. As an example, you could store a customer's email address or a Stripe customer ID. Values are parsed as JSON, e.g. 1.3 is a float, true is a boolean, and foo is a string. Wrap in double quotes to force a string, e.g. "1".`,
         dict: true,
       },
     ],

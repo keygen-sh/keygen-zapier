@@ -1,4 +1,5 @@
 import { Bundle, ZObject } from 'zapier-platform-core'
+import parseMetadata from '../helpers/parseMetadata'
 import * as sample from '../samples/user.json'
 
 interface InputData {
@@ -9,6 +10,8 @@ interface InputData {
 }
 
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
+  const metadata = parseMetadata(bundle.inputData.metadata)
+
   const res = await z.request({
     method: 'POST',
     url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/users`,
@@ -25,7 +28,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
           firstName: bundle.inputData.firstName ?? undefined,
           lastName: bundle.inputData.lastName ?? undefined,
           email: bundle.inputData.email,
-          metadata: bundle.inputData.metadata,
+          metadata,
         },
       },
     },
@@ -68,7 +71,7 @@ export default {
         required: false,
         key: 'metadata',
         label: 'Metadata',
-        helpText: `Metadata is useful for storing additional, structured information on a user. As an example, you could store a Stripe customer ID or whether they accepted your TOS.`,
+        helpText: `Metadata is useful for storing additional, structured information on a user. As an example, you could store a Stripe customer ID or whether they accepted your TOS. Values are parsed as JSON, e.g. 1.3 is a float, true is a boolean, and foo is a string. Wrap in double quotes to force a string, e.g. "1".`,
         dict: true,
       },
     ],
