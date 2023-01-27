@@ -21,6 +21,7 @@ import licenseDeleted from './triggers/licenseDeleted'
 import licenseExpired from './triggers/licenseExpired'
 import licenseExpiring from './triggers/licenseExpiring'
 import licenseRenewed from './triggers/licenseRenewed'
+import licenseUsed from './triggers/licenseUsed'
 import machineActivated from './triggers/machineActivated'
 import machineDeactivated from './triggers/machineDeactivated'
 import releaseCreated from './triggers/releaseCreated'
@@ -45,6 +46,7 @@ export default {
     [licenseExpired.key]: licenseExpired,
     [licenseExpiring.key]: licenseExpiring,
     [licenseRenewed.key]: licenseRenewed,
+    [licenseUsed.key]: licenseUsed,
     [machineActivated.key]: machineActivated,
     [machineDeactivated.key]: machineDeactivated,
     [releaseCreated.key]: releaseCreated,
