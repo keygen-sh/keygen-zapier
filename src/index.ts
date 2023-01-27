@@ -6,6 +6,7 @@ import transferLicense from './creates/transferLicense'
 import renewLicense from './creates/renewLicense'
 import suspendLicense from './creates/suspendLicense'
 import reinstateLicense from './creates/reinstateLicense'
+import resetLicense from './creates/resetLicense'
 import checkoutLicense from './creates/checkoutLicense'
 import createToken from './creates/createToken'
 import downloadArtifact from './creates/downloadArtifact'
@@ -70,6 +71,7 @@ export default {
     [renewLicense.key]: renewLicense,
     [suspendLicense.key]: suspendLicense,
     [reinstateLicense.key]: reinstateLicense,
+    [resetLicense.key]: resetLicense,
     [checkoutLicense.key]: checkoutLicense,
     [createToken.key]: createToken,
     [downloadArtifact.key]: downloadArtifact,
