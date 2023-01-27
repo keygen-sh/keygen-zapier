@@ -67,7 +67,6 @@ export default {
   key: 'licenseUsed',
   noun: 'License',
   display: {
-    important: true,
     label: 'License Used',
     description: `Triggers when a license's usage is incremented.`,
   },
