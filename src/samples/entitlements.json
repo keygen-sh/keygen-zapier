@@ -1,0 +1,6 @@
+{
+  "entitlements": [
+    "FOO_ENTITLEMENT",
+    "BAR_ENTITLEMENT"
+  ]
+}

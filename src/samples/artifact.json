@@ -18,16 +18,16 @@
     "relationships": {
       "account": {
         "links": {
-          "related": "/v1/accounts/{ACCOUNT}"
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2"
         },
         "data": {
           "type": "accounts",
-          "id": "{ACCOUNT}"
+          "id": "59e8b93a-3b09-4d07-94be-3ee2de040de2"
         }
       },
       "release": {
         "links": {
-          "related": "/v1/accounts/{ACCOUNT}/releases/8157c656-c60f-4b82-b93f-3b3ed73abf80"
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/8157c656-c60f-4b82-b93f-3b3ed73abf80"
         },
         "data": {
           "type": "releases",
@@ -36,8 +36,8 @@
       }
     },
     "links": {
-      "related": "/v1/accounts/{ACCOUNT}/releases/8157c656-c60f-4b82-b93f-3b3ed73abf80/artifacts/0dad8516-f071-4573-bcea-d774e81c4a37",
-      "self": "/v1/accounts/{ACCOUNT}/artifacts/0dad8516-f071-4573-bcea-d774e81c4a37"
+      "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/8157c656-c60f-4b82-b93f-3b3ed73abf80/artifacts/0dad8516-f071-4573-bcea-d774e81c4a37",
+      "self": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/artifacts/0dad8516-f071-4573-bcea-d774e81c4a37"
     }
   }
 }

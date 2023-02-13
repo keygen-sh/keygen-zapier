@@ -24,16 +24,16 @@
     "relationships": {
       "account": {
         "links": {
-          "related": "/v1/accounts/{ACCOUNT}"
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2"
         },
         "data": {
           "type": "accounts",
-          "id": "{ACCOUNT}"
+          "id": "59e8b93a-3b09-4d07-94be-3ee2de040de2"
         }
       },
       "product": {
         "links": {
-          "related": "/v1/accounts/{ACCOUNT}/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb/product"
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb/product"
         },
         "data": {
           "type": "products",
@@ -42,27 +42,27 @@
       },
       "entitlements": {
         "links": {
-          "related": "/v1/accounts/{ACCOUNT}/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb/entitlements"
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb/entitlements"
         }
       },
       "constraints": {
         "links": {
-          "related": "/v1/accounts/{ACCOUNT}/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb/constraints"
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb/constraints"
         }
       },
       "artifacts": {
         "links": {
-          "related": "/v1/accounts/{ACCOUNT}/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb/artifacts"
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb/artifacts"
         }
       },
       "upgrade": {
         "links": {
-          "related": "/v1/accounts/{ACCOUNT}/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb/upgrade"
+          "related": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb/upgrade"
         }
       }
     },
     "links": {
-      "self": "/v1/accounts/{ACCOUNT}/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb"
+      "self": "/v1/accounts/59e8b93a-3b09-4d07-94be-3ee2de040de2/releases/46003a57-3e0a-4fc8-99a8-0f089720f1eb"
     }
   }
 }

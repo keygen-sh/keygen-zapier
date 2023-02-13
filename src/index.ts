@@ -16,6 +16,7 @@ import findLicense from './searches/findLicense'
 import findRelease from './searches/findRelease'
 import findArtifact from './searches/findArtifact'
 import findUser from './searches/findUser'
+import listEntitlements from './searches/listEntitlements'
 import licenseCreated from './triggers/licenseCreated'
 import licenseDeleted from './triggers/licenseDeleted'
 import licenseExpired from './triggers/licenseExpired'
@@ -65,6 +66,7 @@ export default {
     [findRelease.key]: findRelease,
     [findArtifact.key]: findArtifact,
     [findUser.key]: findUser,
+    [listEntitlements.key]: listEntitlements,
   },
   creates: {
     [createLicense.key]: createLicense,
