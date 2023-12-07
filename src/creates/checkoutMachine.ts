@@ -20,9 +20,9 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
         encrypt: !!bundle.inputData.encrypt,
         include: [
           'license.entitlements',
-          'license.group',
           'license.user',
           'license',
+          'group',
         ],
       },
     }),
