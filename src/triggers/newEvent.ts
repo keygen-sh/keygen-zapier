@@ -13,7 +13,7 @@ async function performSubscribe(z: ZObject, bundle: Bundle<InputData>) {
       authorization: `Bearer ${bundle.authData.productToken}`,
       'content-type': 'application/json',
       accept: 'application/json',
-      'keygen-version': '1.1',
+      'keygen-version': '1.4',
     },
     json: {
       data: {
@@ -38,7 +38,7 @@ async function performUnsubscribe(z: ZObject, bundle: Bundle) {
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
       accept: 'application/json',
-      'keygen-version': '1.1',
+      'keygen-version': '1.4',
     },
   })
 
@@ -54,7 +54,7 @@ async function performList(z: ZObject, bundle: Bundle<InputData>) {
     headers: {
       authorization: `Bearer ${bundle.authData.productToken}`,
       accept: 'application/json',
-      'keygen-version': '1.1',
+      'keygen-version': '1.4',
     },
   })
 
