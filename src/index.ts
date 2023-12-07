@@ -8,6 +8,8 @@ import suspendLicense from './creates/suspendLicense'
 import reinstateLicense from './creates/reinstateLicense'
 import resetLicense from './creates/resetLicense'
 import checkoutLicense from './creates/checkoutLicense'
+import updateMachine from './creates/updateMachine'
+import checkoutMachine from './creates/checkoutMachine'
 import createToken from './creates/createToken'
 import downloadArtifact from './creates/downloadArtifact'
 import createUser from './creates/createUser'
@@ -16,6 +18,7 @@ import findLicense from './searches/findLicense'
 import findRelease from './searches/findRelease'
 import findArtifact from './searches/findArtifact'
 import findUser from './searches/findUser'
+import findMachine from './searches/findMachine'
 import listEntitlements from './searches/listEntitlements'
 import licenseCreated from './triggers/licenseCreated'
 import licenseDeleted from './triggers/licenseDeleted'
@@ -28,6 +31,7 @@ import machineDeactivated from './triggers/machineDeactivated'
 import releaseCreated from './triggers/releaseCreated'
 import releasePublished from './triggers/releasePublished'
 import licenseList from './triggers/licenseList'
+import machineList from './triggers/machineList'
 import policyList from './triggers/policyList'
 import releaseList from './triggers/releaseList'
 import artifactList from './triggers/artifactList'
@@ -53,6 +57,7 @@ export default {
     [releaseCreated.key]: releaseCreated,
     [releasePublished.key]: releasePublished,
     [licenseList.key]: licenseList,
+    [machineList.key]: machineList,
     [policyList.key]: policyList,
     [releaseList.key]: releaseList,
     [artifactList.key]: artifactList,
@@ -63,6 +68,7 @@ export default {
   },
   searches: {
     [findLicense.key]: findLicense,
+    [findMachine.key]: findMachine,
     [findRelease.key]: findRelease,
     [findArtifact.key]: findArtifact,
     [findUser.key]: findUser,
@@ -77,6 +83,8 @@ export default {
     [reinstateLicense.key]: reinstateLicense,
     [resetLicense.key]: resetLicense,
     [checkoutLicense.key]: checkoutLicense,
+    [checkoutMachine.key]: checkoutMachine,
+    [updateMachine.key]: updateMachine,
     [createToken.key]: createToken,
     [downloadArtifact.key]: downloadArtifact,
     [createUser.key]: createUser,
