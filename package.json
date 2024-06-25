@@ -1,7 +1,8 @@
 {
   "name": "keygen-zapier",
-  "version": "4.0.1",
-  "description": "",
+  "version": "4.1.0",
+  "private": true,
+  "description": "Keygen integration for Zapier",
   "main": "index.js",
   "scripts": {
     "test": "yarn build && jest --testTimeout 10000 --rootDir ./lib/test",
@@ -21,6 +22,5 @@
     "rimraf": "^3.0.2",
     "typescript": "4.2.4",
     "zapier-platform-cli": "^15.5.1"
-  },
-  "private": true
+  }
 }
