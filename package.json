@@ -1,6 +1,6 @@
 {
   "name": "keygen-zapier",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "private": true,
   "description": "Keygen integration for Zapier",
   "main": "index.js",
