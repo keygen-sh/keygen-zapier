@@ -52,7 +52,7 @@ export default {
         required: false,
         key: 'ttl',
         label: 'Time-to-live',
-        helpText: `An optional time-to-live for the license file, in seconds. When blank, this will be automatically set according to the Policy.`,
+        helpText: `An optional time-to-live for the license file, in seconds. When blank, this will be automatically set according to the Policy. Set to -1 for no TTL.`,
         type: 'integer',
       },
       {
