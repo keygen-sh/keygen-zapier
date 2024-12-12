@@ -4,6 +4,7 @@ import * as sample from '../samples/machineFile.json'
 interface InputData {
   id: string
   encrypt: boolean
+  ttl: number
 }
 
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
@@ -18,6 +19,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     body: JSON.stringify({
       meta: {
         encrypt: !!bundle.inputData.encrypt,
+        ttl: bundle.inputData.ttl ? bundle.inputData.ttl : undefined,
         include: [
           'license.entitlements',
           'license.user',
@@ -45,6 +47,13 @@ export default {
         key: 'id',
         label: 'Machine',
         dynamic: 'machines.id.name',
+      },
+      {
+        required: false,
+        key: 'ttl',
+        label: 'Time-to-live',
+        helpText: `An optional time-to-live for the machine file, in seconds. When blank, this will be automatically set according to the Policy.`,
+        type: 'integer',
       },
       {
         required: false,
