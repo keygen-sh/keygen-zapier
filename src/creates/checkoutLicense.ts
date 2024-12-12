@@ -8,6 +8,7 @@ interface InputData {
 }
 
 async function perform(z: ZObject, bundle: Bundle<InputData>) {
+  const ttl = bundle.inputData.ttl === -1 ? null : (bundle.inputData.ttl != null ? bundle.inputData.ttl : undefined)
   const res = await z.request({
     method: 'POST',
     url: `https://api.keygen.sh/v1/accounts/${bundle.authData.accountId}/licenses/${encodeURIComponent(bundle.inputData.id)}/actions/check-out`,
@@ -19,7 +20,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
     body: JSON.stringify({
       meta: {
         encrypt: !!bundle.inputData.encrypt,
-        ttl: bundle.inputData.ttl ? bundle.inputData.ttl : undefined,
+        ttl,
         include: [
           'entitlements',
           'group',
