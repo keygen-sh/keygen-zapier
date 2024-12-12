@@ -102,7 +102,7 @@ export default {
           'license.renewed': 'License renewed',
           'license.revoked': 'License revoked',
           'license.suspended': 'License suspended',
-          'license.reinstated': 'License reinstanted',
+          'license.reinstated': 'License reinstated',
           'license.policy.updated': 'License policy changed',
           'license.user.updated': 'License user changed',
           'user.created': 'User created',
