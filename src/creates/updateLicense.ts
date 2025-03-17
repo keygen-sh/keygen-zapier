@@ -6,6 +6,7 @@ interface InputData {
   id: string
   name: string
   expiry: Date
+  maxMachines: number
   metadata: object
 }
 
@@ -27,6 +28,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
         attributes: {
           name: bundle.inputData.name ?? undefined,
           expiry: bundle.inputData.expiry ? bundle.inputData.expiry : undefined,
+          maxMachines: bundle.inputData.maxMachines ? bundle.inputData.maxMachines : undefined,
           metadata,
         },
       },
@@ -64,6 +66,13 @@ export default {
         label: 'Expiration Date',
         helpText: `An optional expiry for the license. When blank, this will be unchanged.`,
         type: 'datetime',
+      },
+      {
+        required: false,
+        key: 'maxMachines',
+        label: 'Machine Limit',
+        helpText: `An optional machine limit for the license. When blank, this will be unchanged.`,
+        type: 'integer',
       },
       {
         required: false,
