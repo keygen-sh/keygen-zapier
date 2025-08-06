@@ -8,6 +8,7 @@ import suspendLicense from './creates/suspendLicense'
 import reinstateLicense from './creates/reinstateLicense'
 import resetLicense from './creates/resetLicense'
 import checkoutLicense from './creates/checkoutLicense'
+import activateMachine from './creates/activateMachine'
 import updateMachine from './creates/updateMachine'
 import checkoutMachine from './creates/checkoutMachine'
 import createToken from './creates/createToken'
@@ -84,6 +85,7 @@ export default {
     [resetLicense.key]: resetLicense,
     [checkoutLicense.key]: checkoutLicense,
     [checkoutMachine.key]: checkoutMachine,
+    [activateMachine.key]: activateMachine,
     [updateMachine.key]: updateMachine,
     [createToken.key]: createToken,
     [downloadArtifact.key]: downloadArtifact,
