@@ -26,7 +26,7 @@ async function perform(z: ZObject, bundle: Bundle<InputData>) {
         type: 'machines',
         attributes: {
           name: bundle.inputData.name ?? undefined,
-          fingerprint: bundle.inputData.fingerprint ?? undefined,
+          fingerprint: bundle.inputData.fingerprint,
           metadata,
         },
         relationships: {
@@ -68,7 +68,7 @@ export default {
         required: true,
         key: 'fingerprint',
         label: 'Fingerprint',
-        helpText: `An known fingerprint for the machine. This should be a unique value.`,
+        helpText: `A known fingerprint for the machine. This should be a unique value.`,
         type: 'string',
       },
       {
